@@ -57,26 +57,18 @@ public class ReConstructBinaryTree_4 {
 	}
 
 	public TreeNode buildTree(int[] pre, int preStart, int preEnd, int[] in, int inStart, int inEnd) {
-		if (preStart > preEnd || inStart > inEnd || preStart >= pre.length || inStart >= in.length) {
+		if (preStart > preEnd || inStart > inEnd) {
 			return null;
 		} else {
 			TreeNode treeNode = new TreeNode(pre[preStart]);
-			int index = inStart;
-			while (index <= inEnd) {
-				if (in[index] == pre[preStart])
+			int index = 0;
+			while (index + inStart <= inEnd) {
+				if (in[index + inStart] == pre[preStart])
 					break;
 				++index;
 			}
-			if (preStart + 1 != preStart + index) {
-				treeNode.left = this.buildTree(pre, preStart + 1, preStart + index, in, inStart, inStart + index - 1);
-			} else {
-				treeNode.left = new TreeNode(pre[preStart + 1]);
-			}
-			if (preStart + index + 1 != preEnd) {
-				treeNode.right = this.buildTree(pre, preStart + index + 1, preEnd, in, inStart + index + 1, inEnd);
-			} else {
-				treeNode.right = new TreeNode(pre[preEnd]);
-			}
+			treeNode.left = this.buildTree(pre, preStart + 1, preStart + index, in, inStart, inStart + index - 1);
+			treeNode.right = this.buildTree(pre, preStart + index + 1, preEnd, in, inStart + index + 1, inEnd);
 			return treeNode;
 		}
 
