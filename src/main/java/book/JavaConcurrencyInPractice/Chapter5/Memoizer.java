@@ -1,4 +1,4 @@
-package read.JavaConcurrencyInPractice.Chapter5;
+package book.JavaConcurrencyInPractice.Chapter5;
 
 import java.util.concurrent.*;
 

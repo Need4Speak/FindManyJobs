@@ -1,4 +1,4 @@
-package qihu360180827;
+package exam.qihu360180827;
 
 import java.util.Scanner;
 

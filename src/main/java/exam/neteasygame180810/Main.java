@@ -1,4 +1,4 @@
-package interview.neteasygame180810;
+package exam.neteasygame180810;
 
 import java.util.Scanner;
 
