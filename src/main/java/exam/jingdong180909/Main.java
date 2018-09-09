@@ -29,10 +29,15 @@ public class Main {
             boolean flag = false;
             while (itemIterator.hasNext()) {
                 Item item = itemIterator.next();
-                if (temp.compareTo(item) == 1 || item.compareTo(temp) == 1) {
+                if ( item.compareTo(temp) == 1) {
 //                    System.out.println(item.a + " " + item.b + " " + item.c);
                     flag = true;
                     count++;
+                    break;
+                } else if (temp.compareTo(item) == 1) {
+                    //todo 新加入的值比队列里的值大的情况没有处理好
+                    count++;
+                    queue.offer(temp);
                     break;
                 }
             }
