@@ -2,13 +2,13 @@ package util;
 // 邻接表存储图，深度优先遍历
 import java.util.*;
 
-public class DeepFirstSearch {
+public class DeepFirstSearchList {
     private int V;   // No. of vertices
 
     // Array  of lists for Adjacency List Representation
     private LinkedList<Integer> adj[];
 
-    DeepFirstSearch(int v) {
+    DeepFirstSearchList(int v) {
         V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
@@ -44,7 +44,7 @@ public class DeepFirstSearch {
     }
 
     public static void main(String args[]) {
-        DeepFirstSearch g = new DeepFirstSearch(4);
+        DeepFirstSearchList g = new DeepFirstSearchList(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);
