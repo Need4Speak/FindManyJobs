@@ -4,9 +4,9 @@ package util;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.PriorityQueue;
-import java.util.Scanner;
 
-public class Main {
+public class PriorityQueueTest
+{
     public static void main(String[] args) {
 
         Item t1 = new Item(1, 2, 3);
