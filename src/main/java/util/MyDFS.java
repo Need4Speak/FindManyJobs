@@ -3,7 +3,7 @@ package util;
 /**
  * Created by chao on 2018/9/10.
  */
-public class MyDBS {
+public class MyDFS {
     public static void traverse(String[] vertex, int[][] edge, int current, int n, boolean[] flag) {
         if (!flag[current]) {
             flag[current] = true;
@@ -16,6 +16,7 @@ public class MyDBS {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         int[][] edge = {{0, 1, 0, 1, 0}, {1, 0, 1, 0, 1}, {0, 1, 0, 1, 1}, {1, 0, 1, 0, 0},
                 {0, 1, 1, 0, 0}};
