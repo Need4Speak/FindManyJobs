@@ -1,14 +1,24 @@
 package exam.jingdong180909;
 
 public class ClassLoadTest {
+    static {
+        System.out.println("Main Static Statement");
+    }
+    {
+        System.out.println("Main Normal Statement");
+    }
+    public ClassLoadTest() {
+        System.out.println("Main Construct Statement");
+    }
     public static void main(String[] args) {
-        new Child();
+        // new Child();
         System.out.println(Child.str);
         new Child();
 
     }
 }
 class Base {
+//     public static String str = "Base";
     public static final String str = "Base";
     public Base() {
         System.out.println("Base Construct Statement");
@@ -23,7 +33,8 @@ class Base {
     }
 }
 class Child extends Base {
-    // public static final String str = "Child";
+//     public static String str = "Child";
+     public static final String str = "Child";
     public Child() {
         System.out.println("Child Construct Statement");
     }
@@ -35,6 +46,5 @@ class Child extends Base {
     static {
         System.out.println("Child Static Statement");
     }
-
 }
 
